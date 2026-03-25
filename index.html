@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BE INSPO HCM SOLUTIONS INC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; color: #1a1a2e; background: #f9f9f9; }
+
+    /* NAV */
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 60px; background: #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .logo { font-size: 18px; font-weight: 800; color: #0056b3; letter-spacing: 1.5px; }
+    .logo span { color: #1a1a2e; }
+    nav ul { list-style: none; display: flex; gap: 28px; }
+    nav ul li a { text-decoration: none; color: #1a1a2e; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    nav ul li a:hover { color: #0056b3; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #0056b3 0%, #003d82 60%, #001f4d 100%);
+      color: #fff; text-align: center; padding: 110px 40px 90px;
+    }
+    .hero h1 { font-size: 46px; font-weight: 800; letter-spacing: 1px; line-height: 1.2; margin-bottom: 20px; }
+    .hero h1 span { color: #7ec8ff; }
+    .hero p { font-size: 17px; font-weight: 300; max-width: 640px; margin: 0 auto 36px; line-height: 1.8; opacity: 0.92; }
+    .btn {
+      display: inline-block; padding: 14px 36px; background: #fff; color: #0056b3;
+      font-weight: 700; font-size: 15px; border-radius: 30px; text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .btn-outline { background: transparent; color: #fff; border: 2px solid #fff; margin-left: 14px; }
+    .btn-outline:hover { background: #fff; color: #0056b3; }
+
+    /* SECTIONS */
+    section { padding: 80px 60px; }
+    .section-label { font-size: 12px; font-weight: 600; letter-spacing: 3px; color: #0056b3; text-transform: uppercase; margin-bottom: 10px; }
+    h2 { font-size: 34px; font-weight: 700; color: #1a1a2e; margin-bottom: 14px; }
+    .sub { font-size: 15px; color: #666; max-width: 620px; line-height: 1.8; margin-bottom: 50px; }
+
+    /* ABOUT */
+    .about { background: #fff; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-text p { font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 16px; }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .stat-box { background: #f0f6ff; border-radius: 12px; padding: 28px 24px; text-align: center; border-left: 4px solid #0056b3; }
+    .stat-box h3 { font-size: 34px; font-weight: 800; color: #0056b3; }
+    .stat-box p { font-size: 13px; color: #555; margin-top: 6px; }
+
+    /* CLOUD BANNER */
+    .cloud-banner {
+      background: #e8f1fc; padding: 28px 60px; text-align: center;
+      border-top: 2px solid #c3d9f5; border-bottom: 2px solid #c3d9f5;
+    }
+    .cloud-banner p { font-size: 13px; font-weight: 600; letter-spacing: 2px; color: #0056b3; text-transform: uppercase; margin-bottom: 16px; }
+    .cloud-logos { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
+    .cloud-tag {
+      background: #fff; border: 1.5px solid #0056b3; color: #0056b3;
+      border-radius: 20px; padding: 8px 22px; font-size: 13px; font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* SERVICES */
+    .services { background: #f4f8ff; }
+    .services-intro { max-width: 700px; margin-bottom: 48px; }
+
+    /* Category header */
+    .cat-title {
+      font-size: 20px; font-weight: 700; color: #0056b3;
+      border-left: 5px solid #0056b3; padding-left: 14px;
+      margin: 48px 0 24px;
+    }
+
+    /* Service cards grid */
+    .service-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+    .service-card {
+      background: #fff; border-radius: 14px; padding: 28px 26px;
+      box-shadow: 0 4px 16px rgba(0,86,179,0.07);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border-top: 3px solid #0056b3;
+    }
+    .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 28px rgba(0,86,179,0.14); }
+    .service-card .icon { font-size: 30px; margin-bottom: 14px; }
+    .service-card h3 { font-size: 16px; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; }
+    .service-card p { font-size: 13.5px; color: #666; line-height: 1.75; }
+
+    /* Modules */
+    .modules-box {
+      background: #fff; border-radius: 14px; padding: 28px 30px;
+      box-shadow: 0 4px 16px rgba(0,86,179,0.07); margin-top: 24px;
+      border-left: 4px solid #0056b3;
+    }
+    .modules-box h4 { font-size: 15px; font-weight: 700; color: #0056b3; margin-bottom: 10px; }
+    .module-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+    .module-tag {
+      background: #e8f1fc; color: #0056b3; border-radius: 20px;
+      padding: 6px 16px; font-size: 12.5px; font-weight: 600;
+    }
+
+    /* Post go-live */
+    .post-cards { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 10px; }
+    .post-card {
+      background: #fff; border-radius: 14px; padding: 28px 26px; flex: 1; min-width: 220px;
+      box-shadow: 0 4px 16px rgba(0,86,179,0.07); border-top: 3px solid #28a745; text-align: center;
+      transition: transform 0.2s;
+    }
+    .post-card:hover { transform: translateY(-5px); }
+    .post-card .icon { font-size: 32px; margin-bottom: 14px; }
+    .post-card h3 { font-size: 15px; font-weight: 700; color: #1a1a2e; }
+
+    /* TEAM */
+    .team { background: #fff; text-align: center; }
+    .team-grid { display: flex; justify-content: center; gap: 36px; flex-wrap: wrap; margin-top: 10px; }
+    .team-card { background: #f4f8ff; border-radius: 14px; padding: 36px 28px; width: 200px; box-shadow: 0 2px 12px rgba(0,86,179,0.07); }
+    .avatar {
+      width: 72px; height: 72px; border-radius: 50%; background: #0056b3; color: #fff;
+      font-size: 24px; font-weight: 700; display: flex; align-items: center;
+      justify-content: center; margin: 0 auto 16px;
+    }
+    .team-card h4 { font-size: 15px; font-weight: 700; color: #1a1a2e; }
+    .team-card p { font-size: 12px; color: #0056b3; margin-top: 4px; font-weight: 500; }
+
+    /* CONTACT */
+    .contact { background: linear-gradient(135deg, #0056b3, #001f4d); color: #fff; text-align: center; }
+    .contact h2 { color: #fff; }
+    .contact .sub { color: rgba(255,255,255,0.8); margin: 0 auto 36px; }
+    .contact-info { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; margin-top: 20px; }
+    .contact-item { font-size: 15px; opacity: 0.92; }
+    .contact-item span { font-size: 22px; display: block; margin-bottom: 6px; }
+
+    /* FOOTER */
+    footer { background: #1a1a2e; color: rgba(255,255,255,0.5); text-align: center; padding: 24px; font-size: 13px; }
+    footer strong { color: #7ec8ff; }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      nav ul { gap: 14px; }
+      .logo { font-size: 14px; }
+      .hero h1 { font-size: 28px; }
+      section { padding: 60px 20px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .cloud-banner { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">BE INSPO <span>HCM SOLUTIONS</span></div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Expert HCM & ERP<br><span>Implementation Services</span></h1>
+    <p>From cloud readiness assessments to post-go-live support — we deliver end-to-end Human Capital Management and ERP solutions that drive seamless transformation.</p>
+    <a href="#services" class="btn">Explore Our Services</a>
+    <a href="#contact" class="btn btn-outline">Get in Touch</a>
+  </section>
+
+  <!-- CLOUD PRODUCTS BANNER -->
+  <div class="cloud-banner">
+    <p>Cloud Platforms We Support</p>
+    <div class="cloud-logos">
+      <span class="cloud-tag">☁️ Oracle ERP & Fusion</span>
+      <span class="cloud-tag">☁️ SAP SuccessFactors Suite</span>
+      <span class="cloud-tag">☁️ UKG Dimensions</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-label">Who We Are</div>
+        <h2>Built to Inspire,<br>Designed to Perform</h2>
+        <p>BE INSPO HCM SOLUTIONS INC is a forward-thinking technology startup dedicated to transforming how organizations manage their human capital and enterprise operations.</p>
+        <p>We combine deep HCM and ERP domain expertise with hands-on implementation experience to deliver solutions that are scalable, future-ready, and built for long-term success.</p>
+        <p>Our passion for innovation and people drives everything we do — from initial assessment to post-go-live support.</p>
+      </div>
+      <div class="about-stats">
+<div class="stat-box"><h3>🌐</h3><p>Multi-Industry Expertise</p></div>
+<div class="stat-box"><h3>3</h3><p>Cloud Platforms Supported</p></div>
+        <div class="stat-box"><h3>∞</h3><p>Scalable Solutions</p></div>
+        <div class="stat-box"><h3>100%</h3><p>Client Focused</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-label">What We Do</div>
+    <h2>Our Services</h2>
+    <p class="sub services-intro">We offer comprehensive HCM and ERP implementation services — designed to reduce risk, accelerate delivery, and ensure long-term system success.</p>
+
+    <!-- Category 1: Implementation Services -->
+    <div class="cat-title">🏗️ Implementation Services — HCM & ERP</div>
+    <div class="service-grid">
+
+      <div class="service-card">
+        <div class="icon">☁️</div>
+        <h3>Cloud Readiness & Scope Assessment</h3>
+        <p>Thinking of moving your HCM and ERP systems to the cloud but unsure where to begin? Our experts provide a product-agnostic discovery and scope assessment, evaluating your current and future state to recommend solutions that align with your tech stack — ideal for RFP and POC stages.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">📋</div>
+        <h3>End-to-End RFP, RFQ & POC Management</h3>
+        <p>We manage your complete RFP, RFQ, and POC processes — from requirements gathering and vendor shortlisting to evaluation and final selection. Our structured approach ensures transparency, accelerates decision-making, and aligns solutions with your business goals.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🏛️</div>
+        <h3>Solution Architecture</h3>
+        <p>True value is only realized when HCM and ERP components function seamlessly together. Our scalable, future-ready architecture is designed with your long-term roadmap in mind — ensuring every major decision accounts for upstream and downstream impact to minimize rework and accelerate execution.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🔄</div>
+        <h3>Data Migration</h3>
+        <p>We provide comprehensive data migration support including legacy system data extraction, ETL transformation logic development, and cross-functional coordination — ensuring data integrity, relevance, and readiness from day one.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🔗</div>
+        <h3>Integrations</h3>
+        <p>Our team offers complete ownership of the integration process — from design to execution — enabling seamless data flow between systems, reducing manual entry, and managing the complex cutover from legacy to new platforms with minimal disruption.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">⚙️</div>
+        <h3>Custom Configuration</h3>
+        <p>For business scenarios requiring tailored enhancements beyond standard COTS capabilities, we provide end-to-end support across the full SDLC — from requirement gathering and development to testing, deployment, and maintenance — without compromising system stability.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🧪</div>
+        <h3>Flexible Testing Support</h3>
+        <p>Whether you need help strategizing your testing approach, preparing detailed test scenarios, or augmenting your team for full execution — we provide flexible, tailored testing solutions to ensure quality, accuracy, and timely delivery.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🚀</div>
+        <h3>Go-Live Cutover Planning & Execution</h3>
+        <p>Drawing from industry best practices and hands-on experience, we provide comprehensive cutover management — collaborating with your team and implementation partner to plan and execute a smooth transition from legacy systems, minimizing risk and ensuring business continuity.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🤝</div>
+        <h3>Change Management</h3>
+        <p>From targeted tools for internal efforts to full end-to-end support — including execution, communication, training, and learning materials — our flexible Change Management services ensure a smooth transition and strong user adoption across your organization.</p>
+      </div>
+
+    </div>
+
+    <!-- Modules -->
+    <div class="modules-box">
+      <h4>HCM Modules We Cover</h4>
+      <div class="module-tags">
+        <span class="module-tag">Core HCM</span>
+        <span class="module-tag">Payroll</span>
+        <span class="module-tag">Talent Management</span>
+        <span class="module-tag">Time & Attendance</span>
+        <span class="module-tag">Absence Management</span>
+        <span class="module-tag">LMS</span>
+      </div>
+      <h4>ERP Modules We Cover</h4>
+      <div class="module-tags">
+        <span class="module-tag">Procurement</span>
+        <span class="module-tag">Self-Service Procurement</span>
+        <span class="module-tag">Cash Management</span>
+        <span class="module-tag">General Ledger</span>
+        <span class="module-tag">Accounts Payable</span>
+        <span class="module-tag">Accounts Receivable</span>
+        <span class="module-tag">Projects</span>
+        <span class="module-tag">Grants & Expenses Management</span>
+      </div>
+    </div>
+
+    <!-- Category 2: Post Go-Live -->
+    <div class="cat-title">🌟 Post Go-Live Services</div>
+    <div class="post-cards">
+      <div class="post-card">
+        <div class="icon">🛡️</div>
+        <h3>Post Go-Live Support</h3>
+      </div>
+      <div class="post-card">
+        <div class="icon">📦</div>
+        <h3>Release Management</h3>
+      </div>
+      <div class="post-card">
+        <div class="icon">👥</div>
+        <h3>Support Team Establishment</h3>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-label" style="color:#7ec8ff;">Get In Touch</div>
+    <h2>Let's Work Together</h2>
+    <p class="sub">Ready to transform your HCM or ERP systems? We'd love to hear about your project.</p>
+    <div class="contact-info">
+      <div class="contact-item"><span>📞</span>+1 (437) 227-5399</div>
+      <div class="contact-item"><span>✉️</span>connect@beinspo.ca</div>
+    </div>
+    <br><br>
+    <a href="mailto:connect@beinspo.ca" class="btn">Send Us an Email</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 <strong>BE INSPO HCM SOLUTIONS INC</strong>. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
