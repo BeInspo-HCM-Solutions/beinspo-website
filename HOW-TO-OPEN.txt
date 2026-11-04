@@ -1,0 +1,21 @@
+BeInspo website: how to open it
+
+1. Extract (unzip) this whole folder first. Opening a page from inside the zip
+   without extracting breaks the styles and links.
+2. In the extracted folder, double-click index.html. It opens in your browser.
+3. Every menu item, button and link now works between the pages.
+
+Pages
+  index.html                     Homepage
+  readiness-assessment.html      01 Readiness Assessment
+  implementation.html            02 Implementation
+  implementation-assurance.html  03 Implementation Assurance
+  post-go-live-support.html      04 Post Go-Live Support & Stabilization
+  school-boards.html             Solved for school boards
+  team.html                      Our Team
+  contact.html                   Contact form (sends only once the site is live)
+  privacy.html, accessibility.html
+
+The font (Plus Jakarta Sans) is included in assets/fonts, so pages look right even offline.
+
+Yellow-highlighted text marks a placeholder still waiting for a confirmed fact.

@@ -1,331 +1,257 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-CA">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BE INSPO HCM SOLUTIONS INC</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; color: #1a1a2e; background: #f9f9f9; }
-
-    /* NAV */
-    nav {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 18px 60px; background: #fff;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-      position: sticky; top: 0; z-index: 100;
-    }
-    .logo { font-size: 18px; font-weight: 800; color: #0056b3; letter-spacing: 1.5px; }
-    .logo span { color: #1a1a2e; }
-    nav ul { list-style: none; display: flex; gap: 28px; }
-    nav ul li a { text-decoration: none; color: #1a1a2e; font-size: 14px; font-weight: 500; transition: color 0.2s; }
-    nav ul li a:hover { color: #0056b3; }
-
-    /* HERO */
-    .hero {
-      background: linear-gradient(135deg, #0056b3 0%, #003d82 60%, #001f4d 100%);
-      color: #fff; text-align: center; padding: 110px 40px 90px;
-    }
-    .hero h1 { font-size: 46px; font-weight: 800; letter-spacing: 1px; line-height: 1.2; margin-bottom: 20px; }
-    .hero h1 span { color: #7ec8ff; }
-    .hero p { font-size: 17px; font-weight: 300; max-width: 640px; margin: 0 auto 36px; line-height: 1.8; opacity: 0.92; }
-    .btn {
-      display: inline-block; padding: 14px 36px; background: #fff; color: #0056b3;
-      font-weight: 700; font-size: 15px; border-radius: 30px; text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-    }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
-    .btn-outline { background: transparent; color: #fff; border: 2px solid #fff; margin-left: 14px; }
-    .btn-outline:hover { background: #fff; color: #0056b3; }
-
-    /* SECTIONS */
-    section { padding: 80px 60px; }
-    .section-label { font-size: 12px; font-weight: 600; letter-spacing: 3px; color: #0056b3; text-transform: uppercase; margin-bottom: 10px; }
-    h2 { font-size: 34px; font-weight: 700; color: #1a1a2e; margin-bottom: 14px; }
-    .sub { font-size: 15px; color: #666; max-width: 620px; line-height: 1.8; margin-bottom: 50px; }
-
-    /* ABOUT */
-    .about { background: #fff; }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .about-text p { font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 16px; }
-    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .stat-box { background: #f0f6ff; border-radius: 12px; padding: 28px 24px; text-align: center; border-left: 4px solid #0056b3; }
-    .stat-box h3 { font-size: 34px; font-weight: 800; color: #0056b3; }
-    .stat-box p { font-size: 13px; color: #555; margin-top: 6px; }
-
-    /* CLOUD BANNER */
-    .cloud-banner {
-      background: #e8f1fc; padding: 28px 60px; text-align: center;
-      border-top: 2px solid #c3d9f5; border-bottom: 2px solid #c3d9f5;
-    }
-    .cloud-banner p { font-size: 13px; font-weight: 600; letter-spacing: 2px; color: #0056b3; text-transform: uppercase; margin-bottom: 16px; }
-    .cloud-logos { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
-    .cloud-tag {
-      background: #fff; border: 1.5px solid #0056b3; color: #0056b3;
-      border-radius: 20px; padding: 8px 22px; font-size: 13px; font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    /* SERVICES */
-    .services { background: #f4f8ff; }
-    .services-intro { max-width: 700px; margin-bottom: 48px; }
-
-    /* Category header */
-    .cat-title {
-      font-size: 20px; font-weight: 700; color: #0056b3;
-      border-left: 5px solid #0056b3; padding-left: 14px;
-      margin: 48px 0 24px;
-    }
-
-    /* Service cards grid */
-    .service-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
-    .service-card {
-      background: #fff; border-radius: 14px; padding: 28px 26px;
-      box-shadow: 0 4px 16px rgba(0,86,179,0.07);
-      transition: transform 0.2s, box-shadow 0.2s;
-      border-top: 3px solid #0056b3;
-    }
-    .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 28px rgba(0,86,179,0.14); }
-    .service-card .icon { font-size: 30px; margin-bottom: 14px; }
-    .service-card h3 { font-size: 16px; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; }
-    .service-card p { font-size: 13.5px; color: #666; line-height: 1.75; }
-
-    /* Modules */
-    .modules-box {
-      background: #fff; border-radius: 14px; padding: 28px 30px;
-      box-shadow: 0 4px 16px rgba(0,86,179,0.07); margin-top: 24px;
-      border-left: 4px solid #0056b3;
-    }
-    .modules-box h4 { font-size: 15px; font-weight: 700; color: #0056b3; margin-bottom: 10px; }
-    .module-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
-    .module-tag {
-      background: #e8f1fc; color: #0056b3; border-radius: 20px;
-      padding: 6px 16px; font-size: 12.5px; font-weight: 600;
-    }
-
-    /* Post go-live */
-    .post-cards { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 10px; }
-    .post-card {
-      background: #fff; border-radius: 14px; padding: 28px 26px; flex: 1; min-width: 220px;
-      box-shadow: 0 4px 16px rgba(0,86,179,0.07); border-top: 3px solid #28a745; text-align: center;
-      transition: transform 0.2s;
-    }
-    .post-card:hover { transform: translateY(-5px); }
-    .post-card .icon { font-size: 32px; margin-bottom: 14px; }
-    .post-card h3 { font-size: 15px; font-weight: 700; color: #1a1a2e; }
-
-    /* TEAM */
-    .team { background: #fff; text-align: center; }
-    .team-grid { display: flex; justify-content: center; gap: 36px; flex-wrap: wrap; margin-top: 10px; }
-    .team-card { background: #f4f8ff; border-radius: 14px; padding: 36px 28px; width: 200px; box-shadow: 0 2px 12px rgba(0,86,179,0.07); }
-    .avatar {
-      width: 72px; height: 72px; border-radius: 50%; background: #0056b3; color: #fff;
-      font-size: 24px; font-weight: 700; display: flex; align-items: center;
-      justify-content: center; margin: 0 auto 16px;
-    }
-    .team-card h4 { font-size: 15px; font-weight: 700; color: #1a1a2e; }
-    .team-card p { font-size: 12px; color: #0056b3; margin-top: 4px; font-weight: 500; }
-
-    /* CONTACT */
-    .contact { background: linear-gradient(135deg, #0056b3, #001f4d); color: #fff; text-align: center; }
-    .contact h2 { color: #fff; }
-    .contact .sub { color: rgba(255,255,255,0.8); margin: 0 auto 36px; }
-    .contact-info { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; margin-top: 20px; }
-    .contact-item { font-size: 15px; opacity: 0.92; }
-    .contact-item span { font-size: 22px; display: block; margin-bottom: 6px; }
-
-    /* FOOTER */
-    footer { background: #1a1a2e; color: rgba(255,255,255,0.5); text-align: center; padding: 24px; font-size: 13px; }
-    footer strong { color: #7ec8ff; }
-
-    @media (max-width: 768px) {
-      nav { padding: 16px 20px; }
-      nav ul { gap: 14px; }
-      .logo { font-size: 14px; }
-      .hero h1 { font-size: 28px; }
-      section { padding: 60px 20px; }
-      .about-grid { grid-template-columns: 1fr; }
-      .cloud-banner { padding: 24px 20px; }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HCM &amp; ERP implementation for school boards | BeInspo</title>
+  <meta name="description" content="Oracle-centred HCM and ERP implementation for Canadian school boards and the public sector, by people who solved these problems inside boards.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css?v=20261103j">
+  <link rel="stylesheet" href="css/pages.css?v=20261024c">
+  <link rel="stylesheet" href="css/merge.css?v=20261103p">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- NAV -->
-  <nav>
-    <div class="logo">BE INSPO <span>HCM SOLUTIONS</span></div>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<header class="site-header">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html" aria-label="BeInspo home">
+      <span class="brand-mark"><img src="assets/beinspo-logo.png" alt="BeInspo" width="1200" height="600"></span>
+      <span class="brand-tag">Be inspired, Launch forward.</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bar" aria-hidden="true"></span><span class="sr-only">Menu</span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary">
+      <ul class="nav-links">
+        <li class="has-dropdown">
+          <button class="nav-link dropdown-toggle" aria-expanded="false" aria-controls="engage-menu">Offerings <span class="chev" aria-hidden="true"></span></button>
+          <ul id="engage-menu" class="dropdown">
+            <li><a href="readiness-assessment.html"><strong>01 Readiness Assessment</strong><span>Know what you&rsquo;re getting into before you commit.</span></a></li>
+            <li><a href="implementation.html"><strong>02 Implementation</strong><span>We build it, start to finish.</span></a></li>
+            <li><a href="implementation-assurance.html"><strong>03 Implementation Assurance</strong><span>A partner builds; we complete your team.</span></a></li>
+            <li><a href="post-go-live-support.html"><strong>04 Post Go-Live Support</strong><span>Gone live and need it to settle?</span></a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link" href="index.html#why-beinspo">Why BeInspo</a></li>
+        <li><a class="nav-link" href="school-boards.html">Solved for school boards</a></li>
+        <li><a class="nav-link" href="team.html">Our Team</a></li>
+        <li class="nav-cta-item"><a class="btn btn-navy btn-sm" href="contact.html">Talk to us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Expert HCM & ERP<br><span>Implementation Services</span></h1>
-    <p>From cloud readiness assessments to post-go-live support — we deliver end-to-end Human Capital Management and ERP solutions that drive seamless transformation.</p>
-    <a href="#services" class="btn">Explore Our Services</a>
-    <a href="#contact" class="btn btn-outline">Get in Touch</a>
+<main id="main">
+
+  <!-- Hero: two slides rotate in the left column; the path card stays fixed on the right -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <div class="hero-slider" data-slider>
+          <div class="hero-slides" aria-live="polite">
+            <article class="hero-slide is-active" id="hero-slide-1" aria-roledescription="slide" aria-label="1 of 2">
+              <p class="eyebrow">Oracle-centred HCM &amp; ERP delivery</p>
+              <h1 id="hero-heading">Transformation for organizations that <em>can&rsquo;t afford</em> to get it wrong.</h1>
+              <p class="lede">From the readiness assessment to the first clean payroll run, delivered by a <strong>senior-only team</strong> that plays your requirements back to you in real time, instead of handing you documents and surprises.</p>
+            </article>
+            <article class="hero-slide" id="hero-slide-2" aria-roledescription="slide" aria-label="2 of 2" aria-hidden="true">
+              <p class="eyebrow">HCM &amp; ERP implementation for school boards and the public sector</p>
+              <p class="h1">HCM and ERP implementation, <em class="em-plain">by people who ran it inside school boards.</em></p>
+              <p class="lede">Oracle-centred delivery for Canadian school boards and public-sector bodies. We arrive with the school-board problems already solved, so your program&rsquo;s time goes into what is unique to your board, and the same senior team stays from the first session through two go-live cycles and the T4 return.</p>
+            </article>
+          </div>
+          <div class="slider-dots" role="group" aria-label="Choose message">
+            <button type="button" class="slider-dot is-active" data-slide-to="0" aria-label="Message 1" aria-pressed="true"></button>
+            <button type="button" class="slider-dot" data-slide-to="1" aria-label="Message 2" aria-pressed="false"></button>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-yellow" href="#engagement">Find your starting point</a>
+            <a class="btn btn-outline" href="contact.html">Book a 60-minute session</a>
+          </div>
+        </div>
+      </div>
+      <aside class="hero-card" aria-labelledby="path-card-heading">
+        <h2 id="path-card-heading" class="hero-card-title">Four ways to work with us</h2>
+        <ol class="path-list">
+          <li><a href="readiness-assessment.html"><span class="badge">01</span><span class="path-text"><strong>Readiness Assessment</strong>Know what you&rsquo;re getting into before you commit.</span></a></li>
+          <li><a href="implementation.html"><span class="badge">02</span><span class="path-text"><strong>Implementation</strong>We build it, start to finish.</span></a></li>
+          <li><a href="implementation-assurance.html"><span class="badge">03</span><span class="path-text"><strong>Implementation Assurance</strong>A partner builds; we complete your team.</span></a></li>
+          <li><a href="post-go-live-support.html"><span class="badge">04</span><span class="path-text"><strong>Post Go-Live Support</strong>Gone live and need it to settle?</span></a></li>
+        </ol>
+        <p class="hero-card-foot">Each stands on its own. Start wherever your board is.</p>
+      </aside>
+    </div>
   </section>
 
-  <!-- CLOUD PRODUCTS BANNER -->
-  <div class="cloud-banner">
-    <p>Cloud Platforms We Support</p>
-    <div class="cloud-logos">
-      <span class="cloud-tag">☁️ Oracle ERP & Fusion</span>
-      <span class="cloud-tag">☁️ SAP SuccessFactors Suite</span>
-      <span class="cloud-tag">☁️ UKG Dimensions</span>
+  <!-- Four ways, compared -->
+  <section class="section section-grey" id="engagement" aria-labelledby="engage-heading">
+    <div class="wrap">
+      <span id="offerings" class="anchor" aria-hidden="true"></span><span id="path" class="anchor" aria-hidden="true"></span>
+      <p class="eyebrow">Four ways to work with us</p>
+      <h2 id="engage-heading">You know the scope, the gate and the cost <em>before each step.</em></h2>
+      <p class="intro">Public-sector programs fail on surprises. Each offering is bounded, each phase ends in a document you sign, and the commercial basis is stated before we start.</p>
+      <div class="compare compare-open">
+        <div class="table-scroll">
+          <table class="model-table compare-table">
+            <thead><tr><th scope="col">Offering</th><th scope="col">Duration</th><th scope="col">Commercial basis</th><th scope="col">What you sign</th><th scope="col">What you leave with</th></tr></thead>
+            <tbody>
+            <tr><th scope="row"><span class="badge">01</span>Readiness Assessment</th><td>6 to 10 weeks</td><td>Fixed fee for a fixed scope; a portion credited against Implementation</td><td>Scope at the start; the report at the end</td><td>A report you can take into budgeting and an RFP</td></tr>
+            <tr><th scope="row"><span class="badge">02</span>Implementation</th><td>About 18 to 24 months for HCM and ERP together</td><td>Phased; each phase priced and signed off before the next begins</td><td>Requirements, design, test exit and go-live readiness, one per phase</td><td>A live system, a living spec, a trained L3 analyst</td></tr>
+            <tr><th scope="row"><span class="badge">03</span>Implementation Assurance</th><td>Length of your program</td><td>Scheduled touchpoints at the moments that decide the outcome, not a daily rate</td><td>A review schedule agreed with you and your partner</td><td>Signed requirements, review findings, a stronger team</td></tr>
+            <tr><th scope="row"><span class="badge">04</span>Post Go-Live Support</th><td>Ongoing, with a 4-week T4 return</td><td>Subscription covers L1 to L3; credits consumed only at L4 and L5</td><td>A service description and the limits you set</td><td>A support model your team runs</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">No hourly meter runs in the background. If something is out of scope, you hear it before the work, not on the invoice.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why BeInspo: story banner + plain-vs-BeInspo contrast -->
+  <section class="section" id="why-beinspo" aria-labelledby="why-heading">
+    <div class="wrap">
+      <span id="how-we-work" class="anchor" aria-hidden="true"></span><span id="proof" class="anchor" aria-hidden="true"></span>
+      <p class="eyebrow">Why BeInspo</p>
+      <h2 id="why-heading">Built differently, <em>on purpose.</em></h2>
+
+      <div class="story">
+        <svg class="story-spark" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 2c2 16 14 28 30 30-16 2-28 14-30 30-2-16-14-28-30-30C18 30 30 18 32 2z" fill="#F2B705"/></svg>
+        <div class="story-text">
+          <p class="story-quote">We built it from the inside. <span>Then we built a firm to do it for others.</span></p>
+          <p class="story-body">BeInspo came out of a board&rsquo;s own implementation, done with one of the large partners. The gap was readiness, not capability, so we closed it ourselves.</p>
+        </div>
+        <a class="story-link" href="team.html">Meet the team <span aria-hidden="true">&rarr;</span></a>
+      </div>
+
+      <div class="vs" role="table" aria-label="A plain implementation compared with BeInspo">
+        <div class="vs-head" role="row">
+          <span class="vs-h-plain" role="columnheader">A plain implementation</span>
+          <span aria-hidden="true"></span>
+          <span class="vs-h-ours" role="columnheader">With BeInspo</span>
+        </div>
+        <div class="vs-group">
+          <p class="vs-label">How we work</p>
+          <div class="vs-row">
+            <div class="vs-plain"><span class="vs-x" aria-hidden="true"></span><span>Documents and surprises, handed over later</span></div>
+            <div class="vs-arrow" aria-hidden="true">&rarr;</div>
+            <div class="vs-ours"><span class="vs-check" aria-hidden="true"></span><div><strong>Played back, in the room.</strong><span>Captured and structured as you say it, on a requirement dashboard you validate live.</span></div></div>
+          </div>
+          <div class="vs-row">
+            <div class="vs-plain"><span class="vs-x" aria-hidden="true"></span><span>Work moves on assumptions</span></div>
+            <div class="vs-arrow" aria-hidden="true">&rarr;</div>
+            <div class="vs-ours"><span class="vs-check" aria-hidden="true"></span><div><strong>Signed off, phase by phase.</strong><span>Every phase ends with a signed-off document before the next begins.</span></div></div>
+          </div>
+          <div class="vs-row">
+            <div class="vs-plain"><span class="vs-x" aria-hidden="true"></span><span>A pyramid, with juniors absorbing the hours</span></div>
+            <div class="vs-arrow" aria-hidden="true">&rarr;</div>
+            <div class="vs-ours"><span class="vs-check" aria-hidden="true"></span><div><strong>The same team, start to finish.</strong><span>The people who ran your sessions stay through go-live and the T4 return.</span></div></div>
+          </div>
+        </div>
+        <div class="vs-group">
+          <p class="vs-label">Why we&rsquo;re built differently</p>
+          <div class="vs-row">
+            <div class="vs-plain"><span class="vs-x" aria-hidden="true"></span><span>Built from a template</span></div>
+            <div class="vs-arrow" aria-hidden="true">&rarr;</div>
+            <div class="vs-ours"><span class="vs-check" aria-hidden="true"></span><div><strong>From the inside.</strong><span>Formed by people who solved these problems at school boards and colleges.</span><em class="vs-proof">Proof: <a href="team.html">The team page</a></em></div></div>
+          </div>
+          <div class="vs-row">
+            <div class="vs-plain"><span class="vs-x" aria-hidden="true"></span><span>Testing squeezed in at the end</span></div>
+            <div class="vs-arrow" aria-hidden="true">&rarr;</div>
+            <div class="vs-ours"><span class="vs-check" aria-hidden="true"></span><div><strong>Tested where the risk is.</strong><span>Four build-and-test cycles per pillar, two full payroll reconciliations, true end-to-end integration tests with real vendor files.</span><em class="vs-proof">Proof: <a href="implementation.html">The five-phase method</a></em></div></div>
+          </div>
+          <div class="vs-row">
+            <div class="vs-plain"><span class="vs-x" aria-hidden="true"></span><span>Data owned by nobody in particular</span></div>
+            <div class="vs-arrow" aria-hidden="true">&rarr;</div>
+            <div class="vs-ours"><span class="vs-check" aria-hidden="true"></span><div><strong>One name on your data.</strong><span>One named conversion specialist owns extraction, validation and reconciliation end to end.</span><em class="vs-proof">Proof: <a href="team.html">Named on the team page</a></em></div></div>
+          </div>
+          <div class="vs-row">
+            <div class="vs-plain"><span class="vs-x" aria-hidden="true"></span><span>Handed over as a black box</span></div>
+            <div class="vs-arrow" aria-hidden="true">&rarr;</div>
+            <div class="vs-ours"><span class="vs-check" aria-hidden="true"></span><div><strong>A living spec your team can maintain.</strong><span>Each build block explained in plain language, so your team can maintain what we deliver.</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <ul class="promises" aria-label="What is standard">
+        <li><b>6&ndash;10 wk</b><span>Readiness Assessment, with a report that is yours to keep</span></li>
+        <li><b>5</b><span>Named phases, each ending in a document you sign</span></li>
+        <li><b>2&times;</b><span>Full payroll reconciliations before any go-live</span></li>
+        <li><b>4 wk</b><span>T4 return at year end, standard, not extra</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Platforms: compact strip -->
+  <section class="section section-grey section-tight" id="platforms" aria-labelledby="platforms-heading">
+    <div class="wrap">
+      <p class="eyebrow">Platforms</p>
+      <h2 id="platforms-heading">Oracle at the centre. <em>The rest of your landscape alongside it.</em></h2>
+      <ul class="plat-strip">
+        <li class="plat plat-main"><h3>Oracle Fusion Cloud HCM &amp; ERP</h3><p>Core HR, payroll, time and absence, benefits, finance and procurement. Our primary practice, from readiness through post go-live.</p></li>
+        <li class="plat"><h3>SAP SuccessFactors</h3><p>HCM implementation and assurance for organizations standardized on SAP.</p></li>
+        <li class="plat"><h3>UKG Dimensions / SFE</h3><p>Now UKG Pro Workforce Management. Time, scheduling and workforce management, standalone or integrated with the core HCM.</p></li>
+        <li class="plat"><h3>Third-party ecosystem</h3><p>Substitute dispatch, time and scheduling, learning and the other systems that exchange data with the core. We own the end-to-end integration design.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Closing block -->
+  <section class="closing" id="contact" aria-labelledby="closing-heading">
+    <div class="wrap closing-in">
+      <h2 id="closing-heading">Let&rsquo;s start with a conversation.</h2>
+      <p>A 60-to-90-minute session, in person or by video, around your organization&rsquo;s specific complexities and how we&rsquo;ve handled each one where standard products fall short. We bring samples of solved problems, our methods in practice, and time for your questions. There is no commitment attached, and no expectation of one.</p>
+      <div class="btn-row">
+        <a class="btn btn-bright" href="contact.html">Book a session</a>
+        <a class="btn btn-outline-light" href="tel:+14372275399">+1 (437) 227-5399</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div class="footer-brand">
+      <img src="assets/beinspo-logo.png" alt="BeInspo" width="160" height="80">
+      <p class="tagline">Be inspired, Launch forward.</p>
+    </div>
+    <nav class="footer-col" aria-label="Offerings">
+      <h2>Offerings</h2>
+      <ul>
+        <li><a href="readiness-assessment.html">Readiness Assessment</a></li>
+        <li><a href="implementation.html">Implementation</a></li>
+        <li><a href="implementation-assurance.html">Implementation Assurance</a></li>
+        <li><a href="post-go-live-support.html">Post Go-Live Support</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-col" aria-label="Company">
+      <h2>Company</h2>
+      <ul>
+        <li><a href="index.html#why-beinspo">Why BeInspo</a></li>
+        <li><a href="school-boards.html">Solved for school boards</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="footer-col">
+      <h2>Contact</h2>
+      <ul>
+        <li><a href="mailto:connect@beinspo.ca">connect@beinspo.ca</a></li>
+        <li><a href="tel:+14372275399">+1 (437) 227-5399</a></li>
+        <li>Toronto, Ontario</li>
+      </ul>
     </div>
   </div>
+  <div class="wrap footer-legal">
+    <p>&copy; 2026 Be Inspo HCM Solutions Inc. All rights reserved.</p>
+    <ul>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="accessibility.html">Accessibility</a></li>
+    </ul>
+  </div>
+</footer>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="about-grid">
-      <div class="about-text">
-        <div class="section-label">Who We Are</div>
-        <h2>Built to Inspire,<br>Designed to Perform</h2>
-        <p>BE INSPO HCM SOLUTIONS INC is a forward-thinking technology startup dedicated to transforming how organizations manage their human capital and enterprise operations.</p>
-        <p>We combine deep HCM and ERP domain expertise with hands-on implementation experience to deliver solutions that are scalable, future-ready, and built for long-term success.</p>
-        <p>Our passion for innovation and people drives everything we do — from initial assessment to post-go-live support.</p>
-      </div>
-      <div class="about-stats">
-<div class="stat-box"><h3>🌐</h3><p>Multi-Industry Expertise</p></div>
-<div class="stat-box"><h3>3</h3><p>Cloud Platforms Supported</p></div>
-        <div class="stat-box"><h3>∞</h3><p>Scalable Solutions</p></div>
-        <div class="stat-box"><h3>100%</h3><p>Client Focused</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="section-label">What We Do</div>
-    <h2>Our Services</h2>
-    <p class="sub services-intro">We offer comprehensive HCM and ERP implementation services — designed to reduce risk, accelerate delivery, and ensure long-term system success.</p>
-
-    <!-- Category 1: Implementation Services -->
-    <div class="cat-title">🏗️ Implementation Services — HCM & ERP</div>
-    <div class="service-grid">
-
-      <div class="service-card">
-        <div class="icon">☁️</div>
-        <h3>Cloud Readiness & Scope Assessment</h3>
-        <p>Thinking of moving your HCM and ERP systems to the cloud but unsure where to begin? Our experts provide a product-agnostic discovery and scope assessment, evaluating your current and future state to recommend solutions that align with your tech stack — ideal for RFP and POC stages.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="icon">📋</div>
-        <h3>End-to-End RFP, RFQ & POC Management</h3>
-        <p>We manage your complete RFP, RFQ, and POC processes — from requirements gathering and vendor shortlisting to evaluation and final selection. Our structured approach ensures transparency, accelerates decision-making, and aligns solutions with your business goals.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="icon">🏛️</div>
-        <h3>Solution Architecture</h3>
-        <p>True value is only realized when HCM and ERP components function seamlessly together. Our scalable, future-ready architecture is designed with your long-term roadmap in mind — ensuring every major decision accounts for upstream and downstream impact to minimize rework and accelerate execution.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="icon">🔄</div>
-        <h3>Data Migration</h3>
-        <p>We provide comprehensive data migration support including legacy system data extraction, ETL transformation logic development, and cross-functional coordination — ensuring data integrity, relevance, and readiness from day one.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="icon">🔗</div>
-        <h3>Integrations</h3>
-        <p>Our team offers complete ownership of the integration process — from design to execution — enabling seamless data flow between systems, reducing manual entry, and managing the complex cutover from legacy to new platforms with minimal disruption.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="icon">⚙️</div>
-        <h3>Custom Configuration</h3>
-        <p>For business scenarios requiring tailored enhancements beyond standard COTS capabilities, we provide end-to-end support across the full SDLC — from requirement gathering and development to testing, deployment, and maintenance — without compromising system stability.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="icon">🧪</div>
-        <h3>Flexible Testing Support</h3>
-        <p>Whether you need help strategizing your testing approach, preparing detailed test scenarios, or augmenting your team for full execution — we provide flexible, tailored testing solutions to ensure quality, accuracy, and timely delivery.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="icon">🚀</div>
-        <h3>Go-Live Cutover Planning & Execution</h3>
-        <p>Drawing from industry best practices and hands-on experience, we provide comprehensive cutover management — collaborating with your team and implementation partner to plan and execute a smooth transition from legacy systems, minimizing risk and ensuring business continuity.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="icon">🤝</div>
-        <h3>Change Management</h3>
-        <p>From targeted tools for internal efforts to full end-to-end support — including execution, communication, training, and learning materials — our flexible Change Management services ensure a smooth transition and strong user adoption across your organization.</p>
-      </div>
-
-    </div>
-
-    <!-- Modules -->
-    <div class="modules-box">
-      <h4>HCM Modules We Cover</h4>
-      <div class="module-tags">
-        <span class="module-tag">Core HCM</span>
-        <span class="module-tag">Payroll</span>
-        <span class="module-tag">Talent Management</span>
-        <span class="module-tag">Time & Attendance</span>
-        <span class="module-tag">Absence Management</span>
-        <span class="module-tag">LMS</span>
-      </div>
-      <h4>ERP Modules We Cover</h4>
-      <div class="module-tags">
-        <span class="module-tag">Procurement</span>
-        <span class="module-tag">Self-Service Procurement</span>
-        <span class="module-tag">Cash Management</span>
-        <span class="module-tag">General Ledger</span>
-        <span class="module-tag">Accounts Payable</span>
-        <span class="module-tag">Accounts Receivable</span>
-        <span class="module-tag">Projects</span>
-        <span class="module-tag">Grants & Expenses Management</span>
-      </div>
-    </div>
-
-    <!-- Category 2: Post Go-Live -->
-    <div class="cat-title">🌟 Post Go-Live Services</div>
-    <div class="post-cards">
-      <div class="post-card">
-        <div class="icon">🛡️</div>
-        <h3>Post Go-Live Support</h3>
-      </div>
-      <div class="post-card">
-        <div class="icon">📦</div>
-        <h3>Release Management</h3>
-      </div>
-      <div class="post-card">
-        <div class="icon">👥</div>
-        <h3>Support Team Establishment</h3>
-      </div>
-    </div>
-
-  </section>
-
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="section-label" style="color:#7ec8ff;">Get In Touch</div>
-    <h2>Let's Work Together</h2>
-    <p class="sub">Ready to transform your HCM or ERP systems? We'd love to hear about your project.</p>
-    <div class="contact-info">
-      <div class="contact-item"><span>📞</span>+1 (437) 227-5399</div>
-      <div class="contact-item"><span>✉️</span>connect@beinspo.ca</div>
-    </div>
-    <br><br>
-    <a href="mailto:connect@beinspo.ca" class="btn">Send Us an Email</a>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 <strong>BE INSPO HCM SOLUTIONS INC</strong>. All rights reserved.</p>
-  </footer>
-
+<script src="js/main.js?v=20261024c"></script>
 </body>
 </html>
